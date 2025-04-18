@@ -13,7 +13,7 @@ module alu_tb;
     wire signed [7:0] result;
     wire carry_out;
     wire [3:0] flags;
-
+    wire [7:0] result2;
     // ALU operations
     localparam ADD    = 4'b0000;
     localparam SUB    = 4'b0001;
@@ -29,7 +29,8 @@ module alu_tb;
         .RESET(RESET),
         .result(result),
         .carry_out(carry_out),
-        .flags(flags)
+        .flags(flags),
+        .result2(result2)
     );
 
     initial begin
@@ -63,13 +64,26 @@ module alu_tb;
         #10 CLK = 0;
 
         #10 CLK = 1;
-        operand_a = 5;
-        operand_b = 3;
+        operand_a = 10;
+        operand_b = 4;
         alu_operation = MULT;
         
         #10 CLK = 0;
+  /*      #10 CLK = 1;
+        #10 CLK = 0;
+        #10 CLK = 1;
+        #10 CLK = 0;
+        #10 CLK = 1;
+        #10 CLK = 0;
+        #10 CLK = 1;
+        #10 CLK = 0;
+        #10 CLK = 1;
+        #10 CLK = 0;
+        #10 CLK = 1;
+        #10 CLK = 0;
+        #10 CLK = 1;
 
- /*       #10 CLK = 1;
+       #10 CLK = 1;
         operand_a = 21;
         operand_b = 3;
         alu_operation = DIV;

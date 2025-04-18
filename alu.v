@@ -17,7 +17,9 @@ module alu(
     input RESET,
     output reg signed [7:0] result,
     output reg carry_out,
-    output reg [3:0] flags
+    output reg [3:0] flags,
+    
+    output reg [7:0] result2
 );
 
 // ALU operations
@@ -81,6 +83,7 @@ always @(*) begin
         MULT: if (ENABLE) begin
                 /*result = operand_a * operand_b;*/
                 result = booth_result[7:0];
+                result2= booth_result[15:8];
                 carry_out = booth_stop;
               end
               else begin

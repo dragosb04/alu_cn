@@ -3,10 +3,10 @@
 
 module counter (
   input clk, rst_b, c0, c4,
-  output count31
+  output count7
 );
 
-reg [4:0] count;
+reg [2:0] count;
 
 always@(posedge clk, negedge rst_b) begin
   if(!rst_b) 
@@ -17,7 +17,7 @@ always@(posedge clk, negedge rst_b) begin
     count <= count + 1;
 end
 
-assign count31 = count[0] & count[1] & count[2] & count[3] & count[4];
+assign count7 = count[0] & count[1] & count[2];
 
 endmodule
 

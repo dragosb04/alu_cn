@@ -9,7 +9,7 @@ module parallel_adder (
 
 wire [8:0] carry;
 
-assign carry[0] = c3;
+assign carry[0] = 0; // this one might be wrong era c3
 
 generate 
   genvar j;
