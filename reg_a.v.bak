@@ -31,7 +31,7 @@ end
 always @(*) begin
   //if(c5) 
     obus <= a;
-  //else obus <= 8'bz;
+  //else obus <= 8'bz;  //aici
 end
 
 endmodule

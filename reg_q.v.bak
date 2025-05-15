@@ -30,7 +30,7 @@ end
 always @(*) begin
  // if(c6) 
     obus <= q;
-//  else obus <= 8'bz;
+//  else obus <= 8'bz; //si aici
   
 end
 

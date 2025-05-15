@@ -1,7 +1,6 @@
 module rca_tb;
 
   parameter CLK_PERIOD = 10;
-
   reg signed [31:0] operand_a;
   reg signed [31:0] operand_b;
   reg CLK;
