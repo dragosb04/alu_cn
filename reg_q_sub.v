@@ -3,14 +3,14 @@
 
 module reg_q_sub (
   input CLK, RESET, c1, c2, c4, c6, 
-  input [31:0] ibus,
+  input [7:0] ibus,
   input a_lsb,
   input sign,
   output reg q_lsb,
-  output reg [31:0] obus
+  output reg [7:0] obus
 );
 
-reg [31:0] q;
+reg [7:0] q;
 
 always @(posedge CLK, negedge RESET) begin
   if(!RESET)
@@ -23,8 +23,8 @@ always @(posedge CLK, negedge RESET) begin
   else if(c4) 
     begin
         q_lsb <= q[0];
-        q <= {q[31], q[31:1]};
-        q[31] <= a_lsb;
+        q <= {q[7], q[7:1]};
+        q[7] <= a_lsb;
         q[0] <= 0;
       end
 
@@ -34,7 +34,7 @@ end
 always @ (*) begin
   if(c6) 
     obus <= q;
-  else obus <= 32'bz;
+  else obus <= 8'bz;
   
 end
 

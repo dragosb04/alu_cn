@@ -3,8 +3,8 @@
 
 module reg_m_sub (
   input CLK, RESET, c0,
-  input [31:0] ibus,
-  output reg [31:0] q
+  input [7:0] ibus,
+  output reg [7:0] q
 );
 
 always@(posedge c0, negedge RESET) begin

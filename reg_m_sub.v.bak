@@ -1,0 +1,18 @@
+`ifndef REG_M_SUB_V
+`define REG_M_SUB_V
+
+module reg_m_sub (
+  input CLK, RESET, c0,
+  input [31:0] ibus,
+  output reg [31:0] q
+);
+
+always@(posedge c0, negedge RESET) begin
+  if(!RESET) 
+    q <= 0;
+  else if (c0)
+    q <= ibus;
+  end
+endmodule
+
+`endif

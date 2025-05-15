@@ -2,7 +2,7 @@
 `define CU_SUB_V
 
 module control_unit_sub (
-  input clk, rst_b, bgn, s, count31, 
+  input clk, rst_b, bgn, s, count7, 
   output reg c0, c1, c2, c3, c4, c5, c6, stop // stop = end
 );
 
@@ -56,7 +56,7 @@ reg [2:0] st_nxt;
                 c2 = 0;
                 c3 = 0;
                 c4 = 1;
-                if(count31 == 0) begin
+                if(count7 == 0) begin
                 st_nxt = S2;
                 end
                 else begin
