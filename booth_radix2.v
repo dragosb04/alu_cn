@@ -43,7 +43,7 @@ parallel_adder leg9(.x(out_xor), .y(a), .c3(c3), .out(out_sum));
 always@(posedge clk)begin
   //if(c5 | c6)
     obus <= outbus;
-  //    aux <= outbus; 
+  //aux <= outbus; 
 end
 
 //assign obus = aux;

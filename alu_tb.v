@@ -64,7 +64,7 @@ module alu_tb;
         #10 CLK = 0;
 
         #10 CLK = 1;
-        operand_a = 10;
+        operand_a = 0;
         operand_b = 4;
         alu_operation = MULT;
         

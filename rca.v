@@ -42,13 +42,13 @@ module rca (
     carry_out = carry[7];
 
     // ZERO (1000)
-    flags[3] = ~(|result[6:0]);  //ai grija aici
+    flags[3] = ~(|result[6:0]);  
 
     // NEGATIVE (0100)
     flags[2] = result[7];
 
     // CARRYS (0010)
-    flags[1] = carry[8];  //vezi aici nesigur
+    flags[1] = carry[8];  
 
     // OVERFLOW (0001)
     flags[0] = (operand_a[7] & operand_b[7] & ~result[7]) | (~operand_a[7] & ~operand_b[7] & result[7]);
